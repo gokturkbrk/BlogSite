@@ -91,6 +91,12 @@
     <Content Include="blogModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>blogModel.Context.cs</LastGenOutput>
+      <DependentUpon>blogModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="blogModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>blogModel.edmx</DependentUpon>
+      <LastGenOutput>blogModel.cs</LastGenOutput>
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -102,24 +108,48 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>blogModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="blogModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>blogModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="blogModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>blogModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>blogModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comment.cs">
+      <DependentUpon>blogModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Post.cs">
+      <DependentUpon>blogModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>blogModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>blogModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRole.cs">
+      <DependentUpon>blogModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="blogModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>blogModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="blogModel.edmx.diagram">
+    <Content Include="blogModel.edmx.diagram">
       <DependentUpon>blogModel.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -130,7 +160,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
