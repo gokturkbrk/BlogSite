@@ -124,8 +124,10 @@
     <Compile Include="Comment.cs">
       <DependentUpon>blogModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Dto\PostDto.cs" />
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
