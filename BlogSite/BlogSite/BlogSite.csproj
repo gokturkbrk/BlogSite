@@ -125,6 +125,7 @@
       <DependentUpon>blogModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Dto\PostDto.cs" />
