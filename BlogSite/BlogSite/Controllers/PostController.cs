@@ -93,6 +93,7 @@ namespace BlogSite.Controllers
                     p.City = item.City.CityName;
                     p.Content = item.Content;
                     p.Image = item.Image;
+                    posts.Add(p);
                 }
                 return Json(posts);
             }

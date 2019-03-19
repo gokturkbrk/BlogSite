@@ -134,6 +134,7 @@
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Dto\CityDto.cs" />
     <Compile Include="Dto\CommentDto.cs" />
     <Compile Include="Dto\PostDto.cs" />
     <Compile Include="Dto\UserDto.cs" />
