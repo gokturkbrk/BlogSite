@@ -72,6 +72,7 @@ namespace BlogSite.Controllers
                 p.City = getPost.City.CityName;
                 p.Content = getPost.Content;
                 p.Image = getPost.Image;
+                return Json("Post added!");
             }
             catch (Exception ex)
             {

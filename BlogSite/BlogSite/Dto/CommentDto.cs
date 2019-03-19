@@ -9,7 +9,7 @@ namespace BlogSite.Dto
     {
         public string Username { get; set; }
         public int UserID { get; set; }
-        public int PostID { get; set; }
+        public int? PostID { get; set; }
         public string CommentImage { get; set; }
         public string CommentContent { get; set; }
     }

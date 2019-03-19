@@ -110,5 +110,30 @@ namespace BlogSite.Controllers
             }
             
         }
+
+        [HttpGet]
+        public IHttpActionResult GetAllByPost(int PostID)
+        {
+            try
+            {
+                List<CommentDto> comments = new List<CommentDto>();
+                foreach (Comment item in db.Comments.Where(x => x.PostID==PostID))
+                {
+                    CommentDto c = new CommentDto();
+                    c.UserID = item.User.UserID;
+                    c.PostID = item.PostID;
+                    c.Username = item.User.UserName;
+                    c.CommentImage = item.Image;
+                    c.CommentContent = item.Content;
+                    comments.Add(c);
+                }
+                return Json(comments);
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
+        }
     }
 }

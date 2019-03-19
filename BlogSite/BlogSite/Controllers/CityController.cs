@@ -24,6 +24,7 @@ namespace BlogSite.Controllers
             }
             db.Cities.Add(city);
             db.SaveChanges();
+            return Json("City added!");
         }
 
         [HttpDelete]

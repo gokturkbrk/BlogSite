@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace BlogSite
 {
@@ -10,7 +11,7 @@ namespace BlogSite
         public static void Register(HttpConfiguration config)
         {
             // Web API yapılandırması ve hizmetleri
-
+            EnableCorsAttribute attr = new EnableCorsAttribute("http://http://localhost:50343","*","*");
             // Web API yolları
             config.MapHttpAttributeRoutes();
 
