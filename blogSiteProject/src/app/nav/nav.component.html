@@ -20,13 +20,14 @@
       </li>
     </ul>
     <div class="form-group mt-5">
-      <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Username">
-      <input class="form-control mr-sm-2" type="password" placeholder="Password">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Login</button>      
+      <form class="form-inline my-2 my-lg-0" *ngIf="!isAuthenticated" #loginForm="ngForm" (ngSubmit)="login()">
+      <input class="form-control mr-sm-2" type="text" placeholder="Mail" name="Mail" [(ngModel)]="loginUser.Mail" required>
+      <input class="form-control mr-sm-2" type="password" placeholder="Password"name="Password" [(ngModel)]="loginUser.password" required>
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit" [disabled]="!loginForm.valid">Login</button>      
     </form>
       <small id="signup" class="form-text text-muted">Sign up!</small>
     </div>
+    <button class="btn btn-secondary mx-2 my-2 my-sm-0" type="submit" *ngIf="isAuthenticated" (click)="logOut()">Log Out</button>
     
   </div>
 </nav>
