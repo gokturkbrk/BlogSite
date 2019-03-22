@@ -2,12 +2,14 @@
   <div class="container">
     <h3>Add new city</h3>
     <div class="row">
-      <form class="form-inline my-2 my-lg-0" [formGroup]="cityAddForm" (ngSubmit)="add()">
+      <form class="my-2 my-lg-0" [formGroup]="cityAddForm" (ngSubmit)="add()">
         <div class="form-group">
-            <input class="form-control mr-sm-2" type="text" placeholder="City Name" id="CityName" formControlName="CityName">
-            <small class="form-text text-muted" *ngIf="cityAddForm.get('CityName').hasError('required') && cityAddForm.get('CityName').touched">City name must be filled!</small>
+            <input class="form-control mr-sm-2 my-2" type="text" placeholder="City Name" id="CityName" formControlName="CityName" aoutofocus>            
             <button class="btn btn-secondary my-2 my-sm-0" type="submit" [disabled]="!cityAddForm.valid">Add</button>
-        </div>        
+            <small class="form-text text-muted" *ngIf="cityAddForm.get('CityName').hasError('required') && cityAddForm.get('CityName').touched">City name must be filled!</small> 
+        </div> 
+        <h6>{{cityAddForm.value|json}}</h6>
+        <h6>{{cityAddForm.status|json}}</h6>      
       </form>
     </div>
   </div>

@@ -11,7 +11,8 @@ namespace BlogSite
         public static void Register(HttpConfiguration config)
         {
             // Web API yapılandırması ve hizmetleri
-            EnableCorsAttribute attr = new EnableCorsAttribute("http://http://localhost:50343","*","*");
+            EnableCorsAttribute attr = new EnableCorsAttribute("http://localhost:4200","*","*");
+            config.EnableCors(attr);
             // Web API yolları
             config.MapHttpAttributeRoutes();
 
